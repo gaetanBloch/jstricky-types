@@ -1,30 +1,17 @@
-test('') // false
-test(0) // false
-test(NaN) // false
-test(-0) // false
-test(0n) // false
-test(undefined) // false
-test(null) // false
+console.log(!2); // false
+console.log(!!2); // true
 
-function test(value) {
-  if (!value) {
-    console.log('Not Executed');
-  }
-}
+const userInput = 'Gaetan';
+// const hasEnteredValidInput = userInput.length > 0;
+const hasEnteredValidInput = !!userInput;
+console.log(hasEnteredValidInput); // true
 
-console.log('---------');
+console.log('-------');
 
-// Returns the first value if truthy, second value otherwise
-log(true || ''); // true
-log(123 || 'hi'); // 123
-log(0 || 'hi'); // 'hi
+const age = '31';
+// const numberAge = Number(age);
+const numberAge = +age;
+console.log(numberAge + 1); // 32
 
-// Returns second value if first is truthy
-log(true && ''); // ''
-log(123 && 'hi'); // 'hi'
-log(0 && 'hi'); // 0
-
-
-function log(result) {
-  console.log(result);
-}
+const stringAge = numberAge + '';
+console.log(stringAge + 1); // '311'
