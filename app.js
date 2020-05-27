@@ -1,17 +1,52 @@
-console.log([] + 1); // '' + 1 => '1'
-console.log([].toString()); // ''
-console.log([1, 2].toString()); // '1,2'
-console.log([1, 2] + 'hi'); // '1,2hi'
-// 1. Step: toPrimitive() (internal method)
-// 2. Step: toString()
+// Predict WHAT the output will be and WHY that is the case
 
-console.log([1,2] == 0); // NaN == 0 => false
-console.log(+[1,2].toString()); // NaN
-console.log([] == 0); // '' == 0 => 0 == 0 => true
-console.log([] === 0); // false
+console.log("1. 1 + '5'");
+console.log(1 + '5'); // '1' + '5' => '15'
 
-console.log({}.toString()); // '[object Object]'
-console.log({} + 1); // '[object Object]' + 1 => '[object Object]1'
-console.log({} + 'hi'); // '[object Object]hi'
-console.log({} + []); // '[object Object]' + '' => '[object Object]'
-console.log({} == []); // false
+console.log("2. 3 - '5'");
+console.log(3 - '5'); // 3 - 5 => -2
+
+console.log("3. 'hi' + ' there'");
+console.log('hi' + ' there'); // 'hi there'
+
+console.log("4. true * 3");
+console.log(true * 3); // 1 * 3 => 3
+
+console.log("5. 'it is ' + true");
+console.log('it is ' + true); // 'it is true'
+
+console.log("6. 5 == '5'");
+console.log(5 == '5'); // 5 == 5 => true
+
+console.log("7. 0 == false");
+console.log(0 == false); // 0 == 0 => true
+
+console.log("8. 'true' == true");
+console.log('true' == true); // NaN == true => false
+
+console.log("9. '' == false");
+console.log('' == false); // 0 == 0 => true
+
+console.log("10. '' === false");
+console.log('' === false); // false
+
+console.log("11. [] + 1");
+console.log([] + 1); // '1'
+
+console.log("12. [] == false");
+console.log([] == false); // 0 == 0 => true
+
+console.log("13. Boolean([])");
+console.log(Boolean([])); // true
+
+console.log("14. [] == {}");
+console.log([] == {}); // false
+
+console.log("15. [] * {}");
+console.log([] * {}); // NaN
+
+console.log("16. [] * 3");
+console.log([] * 3); // 0
+
+console.log("17. {} + ' this works'");
+console.log({} + ' this works'); // '[object Object] this works'
